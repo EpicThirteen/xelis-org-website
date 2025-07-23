@@ -1,18 +1,8 @@
-import Home from '@/components/Home';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-
-export default function ArabicHome() {
-  return <Home />;
+export default function ArabicPage() {
+  return (
+    <main style={{ padding: 20, direction: "rtl", fontFamily: "sans-serif" }}>
+      <h1>مرحبًا بك في زيليس</h1>
+      <p>الجيل القادم من شبكة البلوكشين، مبني على الخصوصية، السرعة، واللامركزية.</p>
+    </main>
+  );
 }
-
-export async function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations('ar', ['home', 'footer'])),
-    },
-  };
-}
-
-
-
-add Arabic page ar.tsx
